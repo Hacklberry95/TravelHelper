@@ -9,6 +9,7 @@ function CountryList({ cities, isLoading }) {
   if (!cities.length)
     return <Message message="Add your first city by using the map" />;
 
+  //Loops through the array and checks for duplicates - adds only unique countries
   const countries = cities.reduce((arr, city) => {
     if (!arr.map((el) => el.country).includes(city.country))
       return [...arr, { country: city.country, emoji: city.emoji }];
